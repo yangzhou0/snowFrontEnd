@@ -17,7 +17,7 @@ export default function Weather({latitude,longitude}) {
   }
 
   useEffect(()=>{
-    axios.get(`http://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${latitude}&lon=${longitude}&appid=3115dd5f897c855de48b2d210f218903`).then(response => setWeatherData(response.data))
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${latitude}&lon=${longitude}&appid=3115dd5f897c855de48b2d210f218903`).then(response => setWeatherData(response.data))
   },[latitude,longitude])
   const afterSunset = ()=>{
     return weatherData ? weatherData.dt > weatherData.sys.sunset : true

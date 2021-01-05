@@ -9,8 +9,8 @@ export default function Comment({comment,handleLikeComment,handleUpdateComment,h
       <p className="comment-header">{comment.author}</p>
       {!edit ? 
         <div className="comment-body">
-          <span onDoubleClick={()=> setEdit(!edit)}>- {comment.body}</span> <
-            Button className = 'comment-like-button' onClick = {()=>{handleLikeComment(comment.id)}}>
+          <span onDoubleClick={()=> setEdit(!edit)}>- {comment.body}</span> 
+          <Button className = 'comment-like-button' onClick = {()=>{handleLikeComment(comment.id)}}>
           <img src = {likeButton} alt ='like' />
           </Button>
           <span>{comment.likes}</span>
