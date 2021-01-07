@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).\
 The repository of backend for this project built on Django can be found [here](https://github.com/yangzhou93/snowBackEnd)
 ## Available Scripts
 
