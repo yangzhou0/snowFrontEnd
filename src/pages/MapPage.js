@@ -8,9 +8,9 @@ export default function MapPage(){
   const [viewport, setViewport] = useState({
     width: "100vw",
     height: "100vh",
-    latitude: 39.7392,
-    longitude: -104.9903,
-    zoom: 10
+    latitude: 39.8283,
+    longitude: -98.5795,
+    zoom: 4
   });
 
   const [selectedResort, setSelectedResort] = useState(null);
