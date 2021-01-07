@@ -19,12 +19,12 @@ export default function Weather({latitude,longitude}) {
   useEffect(()=>{
     axios.get(`https://api.openweathermap.org/data/2.5/weather?units=imperial&lat=${latitude}&lon=${longitude}&appid=3115dd5f897c855de48b2d210f218903`).then(response => setWeatherData(response.data))
   },[latitude,longitude])
-  const afterSunset = ()=>{
-    return weatherData ? weatherData.dt > weatherData.sys.sunset : true
+  const isNightTime = ()=>{
+    return weatherData ? (weatherData.dt > weatherData.sys.sunset || weatherData.dt < weatherData.sys.sunrise) : true
   }
 
   return (
-    <div className={afterSunset()? 'nightWeather' : 'dayWeather'}>
+    <div className={isNightTime()? 'nightWeather' : 'dayWeather'}>
       {weatherData &&  
         <div>
         <div className="location-box">
