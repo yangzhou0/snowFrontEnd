@@ -13,9 +13,9 @@ export default function ResortPage(props){
     fetchResortByName(resortName).then(resort => setResort(resort))
   },[])
   // [] as the second argument will only call useEffect once when component is rendered
-  // for the first time, anytime after that this useEffect will not be called. 
-  // in this case, a change in state will not trigger re-render
-  // this is minicing componentDidMount
+  // for the first time, anytime after that this useEffect will not be called. (this is usually used when this particular effect does not depend on any props or state) => having [] is mimicing just having ComponentDidMount but not ComponeentDidUpdate(because there is none to update)
+  // in this case, a change in state will  trigger re-render but a useeffect will not run since nothing to watch
+  // if x is in the array, and if x chagnes between each render, then useEffect will run
   
   const handleLikeComment = (commentID)=>{
     likeComment(commentID).then(()=>fetchResortByName(resortName)).then(resort => setResort(resort))

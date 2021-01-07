@@ -2,7 +2,7 @@ import React,{useState, useEffect} from 'react'
 import { Button } from 'reactstrap';
 import './css/commentBoxComponent.scss'
 import likeButton from '../assets/icons/likeButton.png'
-export default function Comment({comment,handleLikeComment,handleUpdateComment,handleDeleteComment,handleAddComment}) {
+export default function Comment({comment,handleLikeComment,handleUpdateComment,handleDeleteComment}) {
   const [edit, setEdit] = useState(false);
   return (
     <div className="comment">
