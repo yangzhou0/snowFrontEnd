@@ -42,6 +42,7 @@ export default function MapPage(){
 
   return ( 
     <div>
+      <SearchBar resortOptions = {resortOptions} setViewport={setViewport} setSelectedResort={setSelectedResort}/>
       <ReactMapGL
       {...viewport}
       mapStyle = 'mapbox://styles/yangzhou93/ckipmnmy613zi17ti10exzems'
@@ -62,7 +63,6 @@ export default function MapPage(){
           </div>
         </Popup>}
       </ReactMapGL>
-      <SearchBar resortOptions = {resortOptions} setViewport={setViewport}/>
 
     </div>
   );
