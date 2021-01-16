@@ -7,7 +7,19 @@ export default function SearchBar({resortOptions,setViewport,setSelectedResort})
     height: "100vh",
     zoom: 5.5
   }
+  let defaultViewport = {
+    width: "100vw",
+    height: "100vh",
+    latitude: 39.8283,
+    longitude: -98.5795,
+    zoom: 4
+  }
   const handleSelectJob = (e)=>{
+    if (!e){
+      setViewport(defaultViewport)
+      setSelectedResort(null)
+      return
+    }
     viewport.latitude = e.value.latitude
     viewport.longitude = e.value.longitude
     setViewport(viewport)
