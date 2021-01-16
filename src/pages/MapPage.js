@@ -4,6 +4,8 @@ import { Link} from 'react-router-dom';
 import { fetchResorts} from '../api/ResortAPI';
 import './css/mapPageCss.css'
 import snowboardLogo from '../assets/icons/snowboard.png'
+import SearchBar from '../components/SearchBar'
+
 export default function MapPage(){
   const [viewport, setViewport] = useState({
     width: "100vw",
@@ -36,6 +38,7 @@ export default function MapPage(){
 
   return ( 
     <div>
+      <SearchBar />
       <ReactMapGL
       {...viewport}
       mapStyle = 'mapbox://styles/yangzhou93/ckipmnmy613zi17ti10exzems'
