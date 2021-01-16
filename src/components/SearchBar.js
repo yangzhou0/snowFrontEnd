@@ -6,10 +6,9 @@ export default function SearchBar({resortOptions}) {
 <Select
     className="basic-single"
     classNamePrefix="select"
-    isLoading={true}
     isClearable={true}
     isSearchable={true}
-    name="resort"
+    name="resorts"
     options={resortOptions}
   />
   )

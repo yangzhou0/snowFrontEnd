@@ -5,7 +5,7 @@ import { fetchResorts} from '../api/ResortAPI';
 import './css/mapPageCss.css'
 import snowboardLogo from '../assets/icons/snowboard.png'
 import SearchBar from '../components/SearchBar'
-
+import {resortsToOptions} from "./helper/resortsToOptions"
 export default function MapPage(){
   const [viewport, setViewport] = useState({
     width: "100vw",
@@ -17,6 +17,7 @@ export default function MapPage(){
 
   const [selectedResort, setSelectedResort] = useState(null);
   const [resortsData, setResortsData] = useState([]);
+  const [resortOptions, setResortOptions] = useState([]);
 
   const handleClick = (resort)=>{
     setSelectedResort(resort)
@@ -29,7 +30,10 @@ export default function MapPage(){
       }
     }
     window.addEventListener('keydown',listener)
-    fetchResorts().then(resorts => setResortsData(resorts))
+    fetchResorts().then(resorts => {
+      setResortsData(resorts);
+      setResortOptions(resortsToOptions(resorts))
+    })
     return ()=>{
       window.removeEventListener('keydown',listener)
     }
@@ -38,7 +42,7 @@ export default function MapPage(){
 
   return ( 
     <div>
-      <SearchBar />
+      <SearchBar resortOptions = {resortOptions}/>
       <ReactMapGL
       {...viewport}
       mapStyle = 'mapbox://styles/yangzhou93/ckipmnmy613zi17ti10exzems'
