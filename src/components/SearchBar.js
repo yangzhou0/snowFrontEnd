@@ -2,11 +2,15 @@ import React from 'react'
 import Select from 'react-select';
 
 export default function SearchBar({resortOptions,setViewport}) {
+  let viewport = {
+    width: "100vw",
+    height: "100vh",
+    zoom: 5.5
+  }
   const handleSelectJob = (e)=>{
-    let latitude = e.value[0]
-    let longitude = e.value[1]
-    console.log('lat',latitude)
-    console.log('long',longitude)
+    viewport.latitude = e.value[0]
+    viewport.longitude = e.value[1]
+    setViewport(viewport)
   }
   return (
     <Select
