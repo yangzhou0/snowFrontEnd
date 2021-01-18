@@ -1,6 +1,6 @@
 # Demo
-Click [here](https://snow-frontend.herokuapp.com/map)
-The backend for this project built on Django can be found [here](https://github.com/yangzhou93/snowBackEnd)
+Click [here](https://snow-frontend.herokuapp.com/map).\
+The backend for this project built on Django can be found [here](https://github.com/yangzhou93/snowBackEnd).
 
 
 # Getting Started with Create React App
